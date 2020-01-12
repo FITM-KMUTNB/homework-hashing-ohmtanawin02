@@ -1,14 +1,20 @@
-data = ["","","","","","","","","",""]
-def list(key,value,num):
-    global data
-    data1 = {key,value}
-    if data[num] == "":
-        data[num]=data1
+information = ["","","","","","","","","",""]
+def list(key,value,number):
+    global information
+    data = {key,value}
+    if information[number] == "":
+        information[number]=data
     else:
         count = -1
-        for i in data:
+        for i in information:
             count = count + 1
             if i == "":
-                data[count] = data1
+                information[count] = data
                 break
-    return data
+    return information
+
+def hash_key(ke):
+    index_num = hash(ke)%10
+    if index_num >= 10 :
+        index_num = index_num % 10
+    return index_num
